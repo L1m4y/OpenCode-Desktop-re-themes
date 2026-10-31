@@ -9,7 +9,7 @@ this project or by another tool.
 Reinstall the official package:
 
 ```bash
-# Arch Linux example; use the equivalent for your package manager
+# Linux example; use the equivalent for your package manager
 sudo pacman -S opencode-desktop
 ```
 
