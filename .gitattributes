@@ -1,0 +1,11 @@
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary
+*.asar binary
+
+*.js linguist-language=JavaScript linguist-detectable=true
+*.mjs linguist-language=JavaScript linguist-detectable=true
+*.py linguist-language=Python linguist-detectable=true
+*.svg text
