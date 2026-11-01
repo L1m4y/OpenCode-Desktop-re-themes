@@ -114,16 +114,7 @@ The output becomes `build/app-midnight.asar`.
 
 The archive rebuild is deliberately conservative: every untouched file is copied byte-for-byte, and only the main chunk, its integrity hash and the new theme chunk change.
 
-## Current target
-
-The builder targets OpenCode Desktop 2.2.5: `main-DH32_HOX.js`, padding 3 and 36
-stock themes. Older releases are not targets; the version notes in
-[`docs/TROUBLESHOOTING.md`](docs/TROUBLESHOOTING.md#version-notes) record the
-changes seen while patching them.
-
-The builder matches structure, not hashed filenames. If the current release
-changes the theme map, registry or stylesheet assignment, `build` fails with a
-clear message instead of writing an invalid archive.
+The builder matches structure, not hashed filenames. If a release changes the theme map, registry or stylesheet assignment, `build` fails with a clear message instead of writing an invalid archive.
 
 ## Limitations
 

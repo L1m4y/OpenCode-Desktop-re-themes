@@ -118,17 +118,15 @@ patched archive there will either be rejected or break the signature.
 
 ## Version notes
 
-The builder follows the current release. The entries below record what changed
-across the versions patched during development; they are history, not additional
-targets.
+These notes record the changes observed across the versions patched during
+development.
 
 | Version | Notes |
 | --- | --- |
-| 2.2.5 (current) | `main-DH32_HOX.js`, padding 3, 36 stock themes. Builds and verifies. |
-| 2.2.3 | Patched during development. Lazy import wrapper `Q`; padding, main chunk and theme list are read from the archive. |
+| 2.2.5 | `main-DH32_HOX.js`, padding 3, 36 stock themes. Builds and verifies. |
+| 2.2.3 | Lazy import wrapper `Q`; padding, main chunk and theme list are read from the archive. |
 | 2.0.x | Lazy import wrapper `G`; the builder reads it from the anchor. |
 
 The 2.2.5 archive used for testing also carried one theme from an external tool;
-the count above is the stock set. When a new release changes an anchor, the build
-fails with a message naming the missing piece. Update the pattern and keep the
-method on the current archive.
+the count above is the stock set. When a release changes an anchor, the build
+fails with a message naming the missing piece; update the corresponding pattern.

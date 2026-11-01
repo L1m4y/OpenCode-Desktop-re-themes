@@ -14,7 +14,7 @@ header and the file payload.
 [u32 a][u32 b][u32 c][u32 d][JSON of d bytes][pad zero bytes][payload]
 ```
 
-The relationships observed in the archives this project targets are:
+The relationships observed in the archives this project reads are:
 
 ```text
 a = 4
