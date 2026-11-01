@@ -68,8 +68,9 @@ reopen it. Electron caches the renderer bundle for the lifetime of the process.
 
 ## The theme is listed but the interface is unchanged
 
-Graphite is dark-only. In light mode the patch deliberately does nothing, so the
-default light theme remains readable. Switch the app to dark mode to see it.
+The generated theme is dark-only. In light mode the patch deliberately does
+nothing, so the default light theme remains readable. Switch the app to dark
+mode to see it.
 
 In dark mode, two possibilities:
 
@@ -93,8 +94,8 @@ value. `--render-shift 0` disables compensation.
 
 `app.asar` is around 235 MB and contains about 11,800 files. The builder reads
 every file to preserve it byte-for-byte and to recompute integrity hashes, so a
-build takes a few seconds and needs roughly twice the archive size in free disk
-space. This is expected.
+build reads and rewrites the whole archive and needs roughly twice the archive
+size in free disk space. This is expected.
 
 ## `verify` reports `payload coverage`
 
@@ -119,9 +120,11 @@ patched archive there will either be rejected or break the signature.
 
 | Version | Main chunk | Padding | Themes | Result |
 | --- | --- | --- | --- | --- |
-| 2.2.5 | `main-DH32_HOX.js` | 3 | 37 | Builds and verifies |
+| 2.2.5 | `main-DH32_HOX.js` | 3 | 36 stock | Builds and verifies |
 | 2.2.3 | — | — | — | Expected to work; run `info` first |
 | 2.0.x | — | — | — | Older wrapper (`G`); the builder reads it from the anchor |
 
-Only 2.2.5 has been tested end to end. For any other version, run `info` and
-`build --dry-run` before touching the installed archive.
+Only 2.2.5 has been tested end to end. The 2.2.5 archive used for testing also
+carried one theme from an external tool; the count above is the stock set. For
+any other version, run `info` and `build --dry-run` before touching the installed
+archive.

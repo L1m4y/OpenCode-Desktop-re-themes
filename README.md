@@ -18,9 +18,9 @@
 
 ## Why this exists
 
-OpenCode's TUI has a documented [JSON theme system](https://opencode.ai/docs/themes/). OpenCode Desktop does not expose a user theme loader: its themes are bundled into the renderer as Vite chunks. This project builds a patched `app.asar` that registers one extra theme, `Graphite`, without touching the rest of the application.
+OpenCode's TUI has a documented [JSON theme system](https://opencode.ai/docs/themes/). OpenCode Desktop does not expose a user theme loader: its themes are bundled into the renderer as Vite chunks. This project builds a patched `app.asar` that registers an extra theme, without touching the rest of the application.
 
-The result is a flat dark interface built around `#323232`. The default palette is shown below; the id, name and colors are configurable.
+`Graphite` is only the default preset. The id, display name, surface color and text color are build options, so the same tool can produce other flat dark themes. The palette below belongs to the default preset.
 
 <p align="center">
   <img src="assets/palette.svg" width="720" alt="Graphite palette">
@@ -94,6 +94,15 @@ Useful build options:
 --dry-run                    generate and validate without writing the archive
 ```
 
+To build a different theme, change the id, name and colors:
+
+```bash
+python -m oc_theme build --theme-id midnight --theme-name "Midnight" \
+  --base-color "#1a1a1a" --text-color "#e6e6e6"
+```
+
+The output becomes `build/app-midnight.asar`.
+
 ## What the build does
 
 1. Reads the ASAR Pickle header and detects the real padding (`b - len(json) - 8`).
@@ -109,7 +118,7 @@ The archive rebuild is deliberately conservative: every untouched file is copied
 
 | OpenCode Desktop | Status | Notes |
 | --- | --- | --- |
-| 2.2.5 | Tested | `main-DH32_HOX.js`, padding 3, 37 stock themes |
+| 2.2.5 | Tested | `main-DH32_HOX.js`, padding 3, 36 stock themes |
 | 2.2.3 | Not tested | Expected to work; run `info` and `build --dry-run` first |
 | 2.0.x | Not tested | Older builds used `G` instead of `Q`; the builder reuses the wrapper it finds |
 
@@ -129,9 +138,9 @@ The builder matches structure, not hashed filenames. If a release changes the th
 oc_theme/            ASAR reader/writer, theme generator, patch and verification code
 tests/               unit and integration tests with a synthetic archive
 docs/                architecture, build workflow and troubleshooting
-assets/              banner and palette previews
+assets/              palette preview
 icons/               project logo
-.github/workflows/   CI (ruff, unittest, node --check)
+.github/workflows/   CI (ruff and unittest)
 ```
 
 ## Documentation

@@ -17,6 +17,9 @@ ruff check .
 Node.js 20+ is required for the tests that parse the generated JavaScript. Tests
 that need it are skipped when `node` is not on `PATH`.
 
+`ruff` is a development tool, not a runtime dependency. Install it with
+`python -m pip install ruff` or `pipx install ruff`.
+
 ## What to test against
 
 The integration tests build and verify a synthetic archive, so they run without

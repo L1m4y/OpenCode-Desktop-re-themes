@@ -59,8 +59,8 @@ Defaults:
 The build writes three files:
 
 - `build/main-patched.mjs`, the patched renderer chunk;
-- `build/graphite.mjs`, the new theme module;
-- `build/app-graphite.asar`, the rebuilt archive.
+- `build/<theme-id>.mjs`, the new theme module;
+- `build/app-<theme-id>.asar`, the rebuilt archive.
 
 The first two exist so you can inspect or diff what changed. They are not needed
 to install the theme.
