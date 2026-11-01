@@ -116,15 +116,19 @@ This project does not support them. Those builds are code-signed and validate th
 ASAR header hash through a mechanism this tool does not update. Installing a
 patched archive there will either be rejected or break the signature.
 
-## Version log
+## Version notes
 
-| Version | Main chunk | Padding | Themes | Result |
-| --- | --- | --- | --- | --- |
-| 2.2.5 | `main-DH32_HOX.js` | 3 | 36 stock | Builds and verifies |
-| 2.2.3 | — | — | — | Expected to work; run `info` first |
-| 2.0.x | — | — | — | Older wrapper (`G`); the builder reads it from the anchor |
+The builder follows the current release. The entries below record what changed
+across the versions patched during development; they are history, not additional
+targets.
 
-Only 2.2.5 has been tested end to end. The 2.2.5 archive used for testing also
-carried one theme from an external tool; the count above is the stock set. For
-any other version, run `info` and `build --dry-run` before touching the installed
-archive.
+| Version | Notes |
+| --- | --- |
+| 2.2.5 (current) | `main-DH32_HOX.js`, padding 3, 36 stock themes. Builds and verifies. |
+| 2.2.3 | Patched during development. Lazy import wrapper `Q`; padding, main chunk and theme list are read from the archive. |
+| 2.0.x | Lazy import wrapper `G`; the builder reads it from the anchor. |
+
+The 2.2.5 archive used for testing also carried one theme from an external tool;
+the count above is the stock set. When a new release changes an anchor, the build
+fails with a message naming the missing piece. Update the pattern and keep the
+method on the current archive.

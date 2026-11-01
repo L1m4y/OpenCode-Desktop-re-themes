@@ -114,13 +114,15 @@ An update replaces `app.asar`, so the theme disappears. The sequence is always:
 3. Install the new output.
 
 Do not reuse an archive built for a previous version. The main chunk filename
-and its contents change between releases.
+and its contents change between releases. The builder always reads the archive
+that is currently installed; there is no separate path for older releases.
 
 ## Porting to a new release
 
 The builder matches structure, not filenames, so most releases need no code
-change. If an anchor moved, the build fails with a message naming the missing
-piece:
+change. The current release is the reference: the goal is to keep the method
+working on it, not to maintain support for older archives. If an anchor moved,
+the build fails with a message naming the missing piece:
 
 - `could not locate the lazy theme import map`
 - `could not locate the visible theme registry`
