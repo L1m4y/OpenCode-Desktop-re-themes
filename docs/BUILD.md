@@ -147,4 +147,5 @@ ruff check .
 ```
 
 The integration tests build and verify a synthetic archive, so they do not need
-OpenCode Desktop installed. They do need Node.js.
+OpenCode Desktop installed. They run the syntax checks when Node.js is on
+`PATH` and skip them otherwise.
