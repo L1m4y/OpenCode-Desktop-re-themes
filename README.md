@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/python-3.10%2B-000000?style=flat-square&logo=python&logoColor=F1F1F1" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/platform-Linux-000000?style=flat-square&logo=linux&logoColor=F1F1F1" alt="Linux">
   <img src="https://img.shields.io/badge/OpenCode%20Desktop-2.2.x-B5B9BA?style=flat-square" alt="OpenCode Desktop 2.2.x">
-  <img src="https://img.shields.io/badge/license-GPL--3.0-000000?style=flat-square" alt="GPL-3.0">
+  <img src="https://img.shields.io/badge/License-GPLv3-000000?style=flat-square" alt="GPLv3">
   <a href="https://github.com/L1m4y/OpenCode-Desktop-re-themes/actions/workflows/ci.yml">
     <img src="https://img.shields.io/badge/CI-GitHub%20Actions-000000?style=flat-square&logo=githubactions&logoColor=F1F1F1" alt="CI">
   </a>
