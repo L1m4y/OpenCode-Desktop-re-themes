@@ -26,13 +26,13 @@ payload_offset = 16 + d + pad
 
 `pad` is not an alignment assumption. It is read from the header
 (`pad = b - d - 8`) and validated against `c`. The versions observed so far use
-0 to 3 bytes. A real 2.2.5 archive starts with:
+0 to 3 bytes. A real 2.2.6 archive starts with:
 
 ```text
-4, 3113610, 3113606, 3113599
+4, 3112782, 3112778, 3112772
 ```
 
-That gives `pad = 3` and `payload_offset = 3113618`.
+That gives `pad = 2` and `payload_offset = 3112790`.
 
 `oc_theme/asar.py` rejects any archive whose header does not satisfy these
 relationships, so a future format change fails loudly instead of producing a
