@@ -123,6 +123,7 @@ development.
 
 | Version | Notes |
 | --- | --- |
+| 2.2.7 | `main-4ARnaxQn.js`, padding 2, 36 stock themes. Main chunk updated; framing unchanged from 2.2.6. |
 | 2.2.6 | `main-riyX3xdz.js`, padding 2, 36 stock themes. Main chunk and framing updated; otherwise the same structural patches apply. |
 | 2.2.5 | `main-DH32_HOX.js`, padding 3, 36 stock themes. Builds and verifies. |
 | 2.2.3 | Lazy import wrapper `Q`; padding, main chunk and theme list are read from the archive. |

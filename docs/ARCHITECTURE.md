@@ -26,7 +26,7 @@ payload_offset = 16 + d + pad
 
 `pad` is not an alignment assumption. It is read from the header
 (`pad = b - d - 8`) and validated against `c`. The versions observed so far use
-0 to 3 bytes. A real 2.2.6 archive starts with:
+0 to 3 bytes. A real 2.2.7 archive starts with:
 
 ```text
 4, 3112782, 3112778, 3112772
