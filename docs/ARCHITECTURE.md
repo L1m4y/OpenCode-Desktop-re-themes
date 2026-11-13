@@ -119,16 +119,24 @@ the anchor rather than hard-coded.
 
 ### Visible registry
 
-The registry is a plain object literal:
+In 2.2.x the registry is a plain object literal:
 
 ```js
 var tzt={"oc-2":`OpenCode`,amoled:`AMOLED`,...}
 ```
 
-The builder appends `"graphite":"Graphite"`. Both the key and the value are
-quoted with `json.dumps`, which keeps hyphenated ids valid JavaScript. An
-unquoted `graphite:` key is a syntax error, and that mistake is the reason the
-old builder produced a broken bundle.
+In 2.3.0 it is a `Map` built from an object literal:
+
+```js
+var g0t=new Map(Object.entries({"oc-2":`OpenCode`,amoled:`AMOLED`,...}))
+```
+
+The builder appends `"graphite":"Graphite"` after one of the anchors
+(`"oc-2":`OpenCode``, `amoled:`AMOLED`` or `flexoki:`Flexoki``), which sit
+inside the `Object.entries({...})` call in both layouts. Both the key and the
+value are quoted with `json.dumps`, which keeps hyphenated ids valid JavaScript.
+An unquoted `graphite:` key is a syntax error, and that mistake is the reason
+the old builder produced a broken bundle.
 
 ### Stylesheet injection
 
